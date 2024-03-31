@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Calculator</title>
+<link href="solarcalulator.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Solar Calculator</h1>
+    </header>
+<main>   
+    <form>
+        <fieldset>
+            <legend>Select one of the following equipment<legend><br>
+            <input type="radio" id="solarPanels" name="equipment" value="SolarPanelsOnly">
+            <label for="solarPanels" class="required">Solar Panels Only</label>
+            <input type="radio" id="batteries" name="equipment" value="batteriesOnly">
+            <label for="batteries" class="required">Batteries Only</label>
+            <input type="radio" id="solarAndBattery" name="equipment" value="solarAndBattery">
+            <label for="solarAndBattery" class="required">Solar Panels and Batteries</label>
+        </fieldset> 
+        <br>
+        <label for="address" class="required">Enter Your Address</label><br>
+        <input type="text" id="customerAddress" name="equipment" placeholder="42 MilkyWay Lane"><br>
+
+        <label for="monthlyBill" class="required">Enter your monthly electric bill:</label><br>
+        <input type="number" id="monthlyBill" name="monthlyBill" min="0" step="0.01" placeholder="$70"><br><br>
+        <label for="zipcode">Enter Your Zipcode</label><br>
+        <input type="number" id="zipcode" name="zipcode" required>
+
+        <!--These following lines of code will serve as an attempt to let users select the type of panels theywant-->
+        <button onclick="calculateAndDisplay()" >Calculate</button>
+    </form>
+</main>
+
+  
+<div id="resultsWithSolar" class="result-container"></div>
+<div id="resultsWithoutSolar" class="result-container"></div>
+
+<footer>
+<script src="calculator.js"></script>
+</body>
+</html>

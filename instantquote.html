@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Instant Quote
+    </title>
+    <link rel="stylesheet" href="instantquote.css">
+    <script src="solardesign.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Helios</a>
+
+      <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Login</a>
+      </nav>
+      
+    </header>
+    
+    <section class="instant-quote">
+      <div class="quote-page">
+        <h1>Let's begin your solar journey!</h1>
+        <p>
+          With the help of our AI we're able to get you an instant design and price.
+        </p>
+      </div>
+      <div class="quoteform">
+        <div class="quoteform-cont">
+          <form id="newformhome" novalidate="novalidate">
+            <div class="quoteform-cont">
+            <div class="quote-address">
+              <label for="addrr">Address</label>
+              <input type="text" class="form-control pac-target-input" id="full-address-new"
+              name="full_address" placeholder="Home Address" autocomplete="on">
+              <input type="hidden" id="street_number_new" name="street_number" value>
+              <input type="hidden" id="route_new" name="street_name" value>
+              <input type="hidden" id="locality_new" name="city" value>
+              <input type="hidden" id="sublocality_level_1_new" name="cityNY" value>
+              <input type="hidden" id="postal_code_new" name="postal_code">
+              <input type="hidden" id="administrative_area_level_1_new" name="state_abbr">
+              <input type="hidden" id="country_new" name="country" value>
+              <input type="hidden" id="lat_new" name="lat" value>
+              <input type="hidden" id="lng_new" name="lng" value>
+              <input type="hidden" name="step" class="step" value="stepnew0">
+              <input type="hidden" name="utm_source" value>
+              <input type="hidden" name="utm_medium" value>
+              <input type="hidden" name="utm_campaign" value>
+              <input type="hidden" name="utm_content" value>
+              <input type="hidden" name="utm_keyword" value>
+              <input type="hidden" name="impact_id" value>
+              <input type="hidden" name="opt_url" value="https://xsolar.org/">
+            </div>
+            <div class="quote-bill">
+              <label for="bill">Electric Bill</label>
+              <input type="number" name="pre_electric_bill" class="form-control" id="pre_electric_bill_new" placeholder="120">
+              <input type="hidden" class="form-control error" name="bill" id="electricbill_new" placeholder="120" value aria-invalid="true">
+            </div>
+            <div class="quote-equipment">
+              <div class="quote-equipment">
+                <label for="equipment">Equipment</label>
+                <select id="equipment" name="equipment">
+                  <option value="solar">Solar</option>
+                  <option value="Battery">Battery</option>
+                  <option value="Solar+Battery">Both</option>
+                </select>
+              </div>
+              
+            </div>
+            <div class="quote-button">
+              <label>&nbsp;</label>
+              <button type="submit" class="getprice">
+                Get Quote
+                
+                </button>
+            </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <title>
-            Helios Nexus Main Home
-        </title>
-        <link rel="stylesheet" href="index.css">
-    </head>
+
+<head>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDSFL8aL4Vdf1iXFvsurCKRhJjuQQaw58&callback=initMap">
+</script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDSFL8aL4Vdf1iXFvsurCKRhJjuQQaw58&loading=async&libraries=places&callback=initMap">
+</script>
+  <title>Solar Order</title>
+  <meta charset="UTF-8">
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Welcome</h1>
+
+  <form class="user" id="userinfo">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" placeholder="First Name"> <br><br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" placeholder="Last Name"> <br><br>
+    <label for="monthlybill">What is your monthly bill?</label>
+    <input type="number" id="monthlyBill" placeholder="$90">
+    <button id="submit-btn" type="button" onclick="calculateAndDisplay()">Get Quote</button><br>
     
-    <body>
-        <header class="header">
-            <a href="#" class="logo">Helios</a>
+  </form>
+  <br>
+     <!--google map test area-->
+     <label>What is your addres? </label>
+     <input id="addressInput" type="text" placeholder="Enter your address">
+     <button onclick="geocodeAddress()">Calculate</button>
+     <div id="map" style="width: 55%; height: 300px;"></div>
+  <div id="solarResults">
 
-            <nav class="navbar">
-                <a href="#" class="active">Instant Quote</a>
-                <a href="signin.html">Login</a>
-                <a href="#">About Us</a>
-            </nav>
-        </header>
+  </div>
 
-    <main>
-     <section class="home">
-        <div class="home-content">
-            <h1>Helios Nexus</h1>
-            <h3>You're in Control</h3>
-            <p> Get an instant design, and proposal for your home!</p>
-            <div class="btn-box">
-                <a href="instantquote.html">Get Your Design</a>
-                <a href="#">Learn More</a>
-            </div>   
-        </div>
-    </section>
-    </main>
-    </body>
+  <div class="resultsNoSolar">
+
+  </div>
+  <div class="resultsWithSolar">
+
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>

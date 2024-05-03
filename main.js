@@ -78,7 +78,13 @@ function displayResults(solarData) {
      -24/7 Customer Support<br>
      -Roof Penetrarion / Workmanship 
     </p>
-  `
+  `;
+  // adding payment link here to stripe 
+  const placeOrder = document.getElementById("order-btn");
+  placeOrder.innerHTML = `
+  <a href = "https://buy.stripe.com/14k3e11KLdjz1RCeUU">
+  <button>Order Now</button>
+  `;
 
 }
 function calculateAndDisplay() {

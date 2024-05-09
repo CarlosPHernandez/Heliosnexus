@@ -10,7 +10,7 @@ const jobs = [
 
     {
         title: "Master Electrician",
-        image: "image/electrician.png",
+        image: "electrician.png",
         details: 
         "Join our dynamic solar startup as a Master Electrician, where you'll lead the electrical aspects of our solar panel installations. Your expertise will be essential in ensuring the safety, compliance, and efficiency of our projects, contributing to our mission of delivering sustainable energy solutions.",
         openPositions: "2",

@@ -1,7 +1,7 @@
 const jobs = [
     {
         title: "Full Stack Developer",
-        image: "image/software-engineer.svg",
+        image: "./image/software-engineer.svg",
         details: 
         "We are currently seeking a highly skilled Full Stack Developer to join our innovative team, driving the development of cutting-edge solutions that redefine industry standards. This role calls for a dedicated professional committed to excellence, capable of delivering comprehensive and impactful technological advancements.",
         openPositions: "1",

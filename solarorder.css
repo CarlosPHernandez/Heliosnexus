@@ -1,0 +1,161 @@
+.hidden {
+    box-shadow: none;
+    border: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    background-color: #c53e3e;
+    color: white;
+  }
+  
+  .header .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .header .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .header .navbar a:hover {
+    text-decoration: underline;
+  }
+
+.userinfo-container {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}  
+
+.userinfo-container label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.userinfo-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+
+.userinfo-container .calculate-btn {
+    display: inline-block;
+    padding: 10px 10px;
+    color: white;
+    background-color: #c53e3e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+.map-container {
+    margin-top: 20px;
+  }
+
+.solarResults,  
+#resultsWS,
+.price {
+    padding: 20px;
+    margin: 30px ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}  
+.equipment-select {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.equipment-select h2 {
+    margin-top: 10px;
+  }
+  
+  .equipment-select .items {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+.equipment-select .items input {
+    margin-right: 20px;
+}  
+
+
+  
+.equipment-select .thumbnail-container {
+    margin-left: auto;
+    padding-right: 30px;
+  }
+  
+.equipment-select .thumbnail {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+
+.equipment-select .description {
+    margin-top: 5px;
+
+}  
+  .price {
+    margin-top: 20px;
+  }
+  
+  .order-now {
+    padding: 0px;
+    margin: 30px;
+  }
+  .order-now button {
+    width: 60%;
+    padding: 10px;
+    color: white;
+    background-color: #c53e3e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar a {
+      padding: 10px;
+    }
+  
+    .thumbnail {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  

@@ -1,0 +1,60 @@
+<script async
+    src="https://pay.google.com/gp/p/js/pay.js"
+    onload="onGooglePayLoaded()">
+</script>
+
+<script>
+    function onGooglePayLoaded(){
+        const googlePayClient =
+            new google.payments.api.PaymentsClient({environment:'TEST'});
+    };
+
+    const clientConfiguration = {
+        apiVersion: 2,
+        apiVersionMinor: 0,
+        allowedPaymentMethods: [cardPaymentMethod]
+    };
+
+    googlePayClient.isReadyToPay(clientConfiguration)
+        .then(function(response) {
+            if(response.result){
+
+            }
+        }).catch(function(err){
+
+        });
+    
+    googlePayClient.createButton({
+        buttonColor:'default',
+        buttonType:'long',
+        onClick: onGooglePaymentsButtonClicked
+    });
+
+    const paymentDataRequest = Object.assign({},clientConfiguration);
+
+    paymentDataRequest.transactionInfo = {
+        totalPriceStatus:'FINAL',
+        totalPrice:'100.00',
+        currencyCode:'USD',
+    };
+
+    paymentDataRequest.merchantInfo = {
+        merchantID:'012345',
+        merchantName:'Placeholder'
+    };
+
+    const cardPaymentMethod = {
+        type: 'CARD',
+        tokenizationSpecification: tokenizationSpec,
+        parameters: {
+            allowedCardNetworks: ['VISA', 'AMEX'],
+            allowedAuthMethods:['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+            billingAddressRequired: true,
+            billingAddressParameters: {
+                format: 'FULL',
+                phoneNumberRequired: true
+            }
+        }
+    }
+
+</script>

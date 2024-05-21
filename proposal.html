@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDSFL8aL4Vdf1iXFvsurCKRhJjuQQaw58&callback=initMap">
@@ -12,7 +12,7 @@
     </script>
   <title>Solar Order</title>
   <meta charset="UTF-8">
-  <link href="gt.css" rel="stylesheet">
+  <link href="solarorder.css" rel="stylesheet">
 </head>
 
 
@@ -26,44 +26,95 @@
     </nav>
   </header>
 
-  
-  <div class="col-2">
-    <form class="user" id="userinfo">
-      <label for="fname" >First Name</label>
-      <input type="text" id="fname" class="fname" placeholder="First Name"> <br><br>
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" class="lname" placeholder="Last Name"> <br><br>
-      <label for="monthlybill">What is your monthly bill?</label>
-      <input type="number" id="monthlyBill" class="bill" placeholder="$90">
-      <button id="submit-btn" type="button" onclick="calculateAndDisplay()" hidden></button><br>
-  </form>
-  <br>
-  <!--google map test area-->
-  <label id="addres">What is your address? </label>
-  <input id="addressInput" type="text" placeholder="Enter your address">
-  
-  <button onclick="geocodeAddress()">Calculate</button>
-  </div> <br>
-  <div class="col-1">
-    <div id="map" style="width: 100%; height: 300px;"></div>
-  </div>  
+  <div class="userinfo-container">
+    <div class="user-info" id="userinfo">
+        <form class="user-input" id="userinfo">
+          <label for="fname" >First Name<span class="required-asterisk">*</span> </label>
+          <input type="text" id="fname" class="fname" placeholder="First Name" required> <br><br>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" class="lname" placeholder="Last Name"> <br><br>
+          <label for="monthlybill">What is your monthly bill?</label>
+          <input type="number" id="monthlyBill" class="bill" placeholder="$90" step="1" min="0" required>
+          <button id="submit-btn" type="button" onclick="calculateAndDisplay()" hidden></button><br>
+        </form>
+      <br>
+      <!--google map test area-->
+      <label id="address">What is your address? </label>
+      <input id="addressInput" type="text" placeholder="Enter your address" class="address" >
+      
+      <button class="calculate-btn"  onclick="geocodeAddress()">Calculate</button>
+    </div> <br>
 
-
-  <div id="solarResults" class="solarResults">
+    <div class="map-container">
+      <div id="map" style="width: 100%; height: 200px;"></div>
+    </div>  
+  </div>
+<!--adding a new class with the name hidden to hide the shadow boxes-->
+  <div id="solarResults" class="solarResults hidden">
 
   </div>
 
-  <div id="resultsWS" class="col-3">
+  <div id="resultsWS" class="col-3 hidden">
 
   </div>
   
-  <div class="price" id="totalAmount">
+  <!--Working on upgrades and price updates for each selected-->
+  <div id="upgrades" class="equipment-select">
+    <h2>Choose your upgrades</h2>
+        <label class="items">
+            <input type="checkbox" class="upgrade" value="Battery Pack" data-price="13895">
+            <!--adding a div herer for css-->
+            <span></span>
+            <div>
+            <p>Tesla Powerwall</p> 
+            <p class="description">A Tesla Powerwall stores excess solar energy generated during the day for use at night or during power outages, providing energy independence and backup power.</p>
+            </div>
+              <div class="thumbnail-container">
+                <img class="thumbnail" alt="Power Wall" src="image/power-everything-desktop.avif">
+              </div>
+        </label>
+        <label class="items">
+            <input type="checkbox" class="upgrade" value="Critter Guard" data-price="300">
+            <span></span>
+            <div>
+            <p>Critter Guard</p> 
+            <p class="description"> Critter guards protect solar panels by preventing birds and small animals from nesting underneath, ensuring optimal performance and longevity of the system.</p>
+            </div>
+            <div class="thumbnail-container">
+            <img class="thumbnail" alt="critter-guard" src="image/critter guard.jpg">
+            </div>
+        </label>
+        <label class="items">
+            <input type="checkbox" class="upgrade" value="Solar Panel Guard" data-price="800">
+            <div>
+            <p>Solar Panel Edge Guard</p>
+            <p class="description"> Solar panel edge guards safeguard the edges of solar panels from damage caused by debris, weather, and pests, enhancing durability and efficiency.</p>
+            </div>
+            <div class="thumbnail-container">
+            <img  class="thumbnail"  alt="solarskirt" src="image/solarskirt.jpg" >
+            </div>
+        </label>
+        <label class="items">
+            <input type="checkbox" class="upgrade" value="Car Charger" data-price="800">
+            <div>
+              <p>Ev Home Charger</p>
+              <p class="description">A home EV charger provides a convenient and fast way to charge electric vehicles at home, ensuring your car is always ready for use.</p>
+            </div> 
+            <div class="thumbnail-container">
+            <img class="thumbnail" alt="homecharger" src="image/tesla_wall_connector_hero_image.386x425.q75.webp">
+             </div> 
+        </label>
+</div>
 
-  </div>
+  <div class="price hidden" id="totalAmount">
+ </div>
+
   <div class="order-now" id="order-btn">
     
   </div>
-  <script src="main.js"></script>
+
+
+  <script src="proposal.js"></script>
   
 </body>
 

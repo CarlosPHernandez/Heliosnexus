@@ -1,0 +1,23 @@
+
+docker pull mysql:latest
+
+docker run --name dev-mysql -e MYSQL_ROOT_PASSWORD=pass123 -d mysql:latest
+ 
+now mysql server is running now let us pull the phpmyadmin and create the container
+
+docker pull phpmyadmin/phpmyadmin:latest
+
+docker run --name dev-phpmyadmin -d --link dev-mysql:db -p 7098:80 phpmyadmin/phpmyadmin
+
+access phpmyadmin http://localhost:7098/
+
+root and pass pass123
+  
+access using CLI 
+
+docker exec -it dev-mysql bash
+
+mysql -u root -p
+select now();
+select current_timestamp();
+select current_date,curdate(),current_date();

@@ -13,7 +13,13 @@ $isInvalid = false;
         if($user){
             // verifying the password
             if(password_verify($_POST["password"], $user["hash_password"])){
-                die("Login succesful");
+                // now the session can start
+                session_start();
+                $_SESSION["user_id"] = $user["id"];
+
+                // redirecting to index page
+                header("Location: index.php");
+                exit;
             }
         }
 

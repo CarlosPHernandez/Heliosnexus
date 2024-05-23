@@ -67,12 +67,11 @@ const userInput = {
     
 
     document.getElementById("solarResults").innerHTML = `
-    <h2>Hi ${customerName}, here are your solar calculations! Below are two comparisons between staying with your current
-    electric provider vs going solar with Helios!</h2>
-    <p>Utility Provider: ${utilityProvider}</p>
-    <p>Your Utility Rate is ${utilityRate}</p>
-    <p>Annual Electric Bill: $${yearlyCost}</p>
-    <p>Estimated Annual Consumption: ${annualKwh}Kwh</p>
+ <h2>Your System</h2>
+    <p><strong>System Size</strong>: ${systemSize}Kw</p>
+    <p><strong>Number of panels</strong>: ${panelsNeeded}</p> 
+    <p><strong>Estimated Annual Production</strong>: ${estimatedProduction}Kwh</p>
+    <p><strong>Panel Type:</strong> Hanwha QCell 405</p>
     
     `;
     // adding a display results of soalr calculations so its two diffetent sections
@@ -88,10 +87,10 @@ const userInput = {
     const totalAmount = document.getElementById("totalAmount");
     totalAmount.innerHTML = `
     <h2>Price Breakdown</h2
-    <p>Estimated System Price $${formattedPrice} </p>
-    <p>Discounts and 30% Tax Credit $${formattedDiscount}</p>
-    <p>System Price after incentives applied: $${formattedAdjustedPrice}</p>
-    <p>Total Upgrade Cost: $${formattedTotalPriceWithUpgrades}</p>
+    <p><strong>Estimated System Price</strong>: $${formattedPrice} </p>
+    <p><strong>Discounts and 30% Tax Credit</strong>: $${formattedDiscount}</p>
+    <p><strong>System Price after incentives applied</strong>: $${formattedAdjustedPrice}</p>
+    <p><strong>Total Upgrade Cost</strong>: $${formattedTotalPriceWithUpgrades}</p>
     
     <p><b>Helios Protection Plan <b><br>
        -25 Year Warranty <br>
@@ -106,7 +105,17 @@ const userInput = {
     <a href = "https://buy.stripe.com/14k3e11KLdjz1RCeUU">
     <button>Order Now</button>
     `;
-  
+     // adding next steps after deposit here
+    const nextSteps = document.getElementById("next-steps");
+    nextSteps.innerHTML =`
+    <h2>What Happens Next?</h2>
+    <ol>
+      <li><strong>Deposit Placed</strong>: Place a deposit to start your project.</li>
+      <li><strong>Manual Design</strong>: We design your custom solar panel system with the help of our engineers.</li>
+      <li><strong>Home Survey</strong>: We conduct a home survey to prepare for installation.</li>
+      <li><strong>Permitting</strong>: All permits are submitted for approval.</li>
+      <li><strong>Installation</strong>: Our team will reach out to schedule a day for installation.</li>
+    `; 
   }
   // adding a function to hide formfield after submission here
   function hideFormFields() {

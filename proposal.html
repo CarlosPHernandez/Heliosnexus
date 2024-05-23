@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +11,7 @@
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDSFL8aL4Vdf1iXFvsurCKRhJjuQQaw58&loading=async&libraries=places&callback=initMap">
     </script>
+
   <title>Solar Order</title>
   <meta charset="UTF-8">
   <link href="solarorder.css" rel="stylesheet">
@@ -25,7 +27,7 @@
       <a href="#" class="active">Log In</a>
     </nav>
   </header>
-
+  <h1 class="h1">Get Your Instant Solar Design Now- <br> No Salespeople, No Hassle! </h1>
   <div class="userinfo-container">
     <div class="user-info" id="userinfo">
         <form class="user-input" id="userinfo">
@@ -45,18 +47,27 @@
       <button class="calculate-btn"  onclick="geocodeAddress()">Calculate</button>
     </div> <br>
 
+  
+    <div id="solarResults" class="solarResults hidden">
+
+    </div>
+    
     <div class="map-container">
-      <div id="map" style="width: 100%; height: 200px;"></div>
+      <div class="map"   id="map" style="width: 80%; height: 250px;"></div>
     </div>  
   </div>
 <!--adding a new class with the name hidden to hide the shadow boxes-->
-  <div id="solarResults" class="solarResults hidden">
 
+  <!--going to try to add an image of the solar panels here itll have to be a grid box-->
+  <div class="results-container">
+      <div id="resultsWS" class="resultsWS">
+    
+      </div>
+      <div class="image-container">
+        <img src="image/hanwha solar panel diagram.webp">
+      </div>
   </div>
 
-  <div id="resultsWS" class="col-3 hidden">
-
-  </div>
   
   <!--Working on upgrades and price updates for each selected-->
   <div id="upgrades" class="equipment-select">
@@ -66,7 +77,7 @@
             <!--adding a div herer for css-->
             <span></span>
             <div>
-            <p>Tesla Powerwall</p> 
+            <h3>Tesla Powerwall</h3> 
             <p class="description">A Tesla Powerwall stores excess solar energy generated during the day for use at night or during power outages, providing energy independence and backup power.</p>
             </div>
               <div class="thumbnail-container">
@@ -77,7 +88,7 @@
             <input type="checkbox" class="upgrade" value="Critter Guard" data-price="300">
             <span></span>
             <div>
-            <p>Critter Guard</p> 
+            <h3>Critter Guard</h3> 
             <p class="description"> Critter guards protect solar panels by preventing birds and small animals from nesting underneath, ensuring optimal performance and longevity of the system.</p>
             </div>
             <div class="thumbnail-container">
@@ -87,7 +98,7 @@
         <label class="items">
             <input type="checkbox" class="upgrade" value="Solar Panel Guard" data-price="800">
             <div>
-            <p>Solar Panel Edge Guard</p>
+            <h3>Solar Panel Edge Guard</h3>
             <p class="description"> Solar panel edge guards safeguard the edges of solar panels from damage caused by debris, weather, and pests, enhancing durability and efficiency.</p>
             </div>
             <div class="thumbnail-container">
@@ -97,7 +108,7 @@
         <label class="items">
             <input type="checkbox" class="upgrade" value="Car Charger" data-price="800">
             <div>
-              <p>Ev Home Charger</p>
+              <h3>Ev Home Charger</h3>
               <p class="description">A home EV charger provides a convenient and fast way to charge electric vehicles at home, ensuring your car is always ready for use.</p>
             </div> 
             <div class="thumbnail-container">
@@ -106,14 +117,16 @@
         </label>
 </div>
 
-  <div class="price hidden" id="totalAmount">
+  <div class="price-hidden" id="totalAmount">
  </div>
 
   <div class="order-now" id="order-btn">
     
   </div>
 
+  <div class="next-steps" id="next-steps">
 
+  </div>
   <script src="proposal.js"></script>
   
 </body>

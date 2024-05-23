@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     padding: 10px 20px;
     align-items: center;
-    background-color: #c53e3e;
+    background-color: #d61111;
     color: white;
   }
   
@@ -26,6 +26,10 @@ body {
     font-weight: bold;
   }
   
+  .header .navbar {
+      display: none;
+  }
+
   .header .navbar a {
     color: white;
     text-decoration: none;
@@ -43,6 +47,22 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }  
 
+.userinfo-container label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+} 
+.userinfos-container {
+    background:white;
+    width: 90%;
+    padding: 40px 10px;
+    margin: auto;
+} 
 .userinfo-container label{
     font-weight: bold;
     margin-bottom: 5px;

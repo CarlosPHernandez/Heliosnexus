@@ -9,7 +9,7 @@ const jobs = [
     },
     {
         title: "Event Marketing Representative",
-        image: "marketing-role.png" ,
+        image: "image/marketing-role.png" ,
         details: "As an event marketing representative, you will attend events and engage potential customers in person, educating them about our solar energy solutions and generating leads. Your role focuses on building relationships and effectively communicating the benefits of our products to drive customer acquisition.",
         openPositions: "2",
         link: "https://forms.gle/7cVNverY7cRdMAyV7"

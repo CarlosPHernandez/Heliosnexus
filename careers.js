@@ -16,7 +16,7 @@ const jobs = [
     },
     {
         title: "Digital Marketing Specialist",
-        image: "",
+        image: "image/digital-marketing.png",
         details: "We are seeking a versatile and data-driven Digital Marketing Specialist to lead our online growth efforts. You will be responsible for developing and executing strategies to drive user acquisition, engagement, and retention through various digital channels.",
         openPositions: "1",
         link: "https://forms.gle/j4x8wW5Dbj4eh2za7",

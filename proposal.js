@@ -28,7 +28,15 @@ const userInput = {
     const formattedPrice = systemPrice.toLocaleString({minimumFractionDigits:2});
     const formattedDiscount = taxCreditDiscount.toLocaleString({minimumFractionDigits:2});
     const formattedAdjustedPrice = adjustedPrice.toLocaleString({minimumFractionDigits:2});
-    
+    const address = document.getElementById('addressInput').value;
+    //30 year calculations of do nothing
+    const rateIncrease = 0.03;
+    const years = 30;
+    const r = 1 + rateIncrease;
+    const totalDoNothingCost = yearlyCost * (Math.pow(r, years)- 1) / (rateIncrease);
+    const formattedDoNothingCost = totalDoNothingCost.toLocaleString({minimumFractionDigits:2});
+    //Break even calculation
+    const roi = adjustedPrice/yearlyCost;
   
     return {
       yearlyCost,
@@ -43,6 +51,9 @@ const userInput = {
       monthlyKwh: Math.floor(monthlyBill / utilityRate),
       panelsNeeded: Math.floor(annualKwh / panelWattage),
       systemSize: Math.floor(panelsNeeded * (panelWattage / 1000)),
+      totalDoNothingCost: Math.floor(Math.pow(r, years)- 1) / (rateIncrease),
+      formattedDoNothingCost,
+      roi: Math.floor(adjustedPrice/yearlyCost),
       annualKwh,
     };
   }
@@ -74,6 +85,18 @@ const userInput = {
     <p><strong>Panel Type:</strong> Hanwha QCell 405</p>
     
     `;
+
+    // comparison on do nothing cost and solar cost 
+    const breakEven = document.getElementById("breakEven");
+    breakEven.innerHTML = `
+    <h2 class= "cost">What Not Going Solar Can Cost You</h2>
+    <p><strong>What you will spend in 30 years if you do not switch to solar</strong></p>
+    <h1>$${formattedDoNothingCost}</h1>
+    <p><i><em>Based on a traditional 3% annual utility rate increase<em><i></p>
+    <h2>Break Even Time Frame</h2>
+    <h1>${roi} years</h1>
+    <p>With Helios Nexus, your investment in solar will pay for itself withing the number above based on your current energy usage and savings.`;
+
     // adding a display results of soalr calculations so its two diffetent sections
     const resultsWS = document.getElementById("resultsWS");
     resultsWS.innerHTML = `

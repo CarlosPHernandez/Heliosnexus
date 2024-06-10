@@ -70,7 +70,8 @@ const userInput = {
   function displayResults(solarData) {
     const { utilityRate, utilityProvider, fname } = userInput;
     const { yearlyCost, monthlyKwh, annualKwh, panelsNeeded, customerName, systemSize,
-         estimatedProduction, systemPrice, taxCreditDiscount, adjustedPrice, formattedPrice, formattedDiscount, formattedAdjustedPrice} = solarData; //added fistname
+         estimatedProduction, systemPrice, taxCreditDiscount, adjustedPrice, 
+         formattedPrice, formattedDiscount, formattedAdjustedPrice,totalDoNothingCost, roi, formattedDoNothingCost} = solarData; //added fistname
  // adding a const here for upgrade prices
     const totalUpgradeCost = calculateTotalUpgradeCost();
     const totalPriceWithUpgrades = adjustedPrice + totalUpgradeCost;

@@ -1,0 +1,648 @@
+/* Global Styles */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #161616;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 0;
+    color: #fff;
+    height: 140px; /* Fixed height for the header */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    height: 150px;
+    max-height: 100%; /* Ensures the logo scales within the header's height */
+    width: auto; /* Maintains the aspect ratio */
+    margin: 10px;
+    
+}
+.menu-toggle {
+    display: none; /* Hide the menu toggle button by default */
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+    z-index: 1001; /* Ensure it is above the navbar */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    background-color: #c40000;
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+   
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ec410d; /* Change color on hover */
+}
+
+.hero {
+    background: url('https://api.time.com/wp-content/uploads/2015/06/gettyimages-180312245.jpg') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column;
+    position: relative; /* Needed for the overlay to be positioned correctly */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Black layer with 50% opacity */
+    z-index: 1; /* Ensures the overlay is below the text */
+}
+
+.hero > * {
+    z-index: 2; /* Ensures the text is above the overlay */
+}
+
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero .buttons {
+    display: flex;
+    flex-direction: column; /* Align buttons vertically */
+    align-items: center;    /* Center buttons horizontally */
+}
+
+.hero .btn-primary, .hero .btn-secondary {
+    padding: 10px  20px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 15px 0 ;
+    width: 320px;
+    text-align: center;
+
+}
+
+.hero .btn-primary {
+    background-color: #a72d18;
+    
+}
+
+.hero .btn-secondary {
+    background-color: #2c2c2c;
+
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.team h2 {
+    display: block; /* Ensure it is a block element */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+}
+
+.team p {
+    margin: 10px 0 20px 0; /* Add some space above and below the paragraph */
+}
+
+.profile {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px; /* Adds space between text and images */
+}
+
+.profilepic {
+    max-width: 180px;
+    border-radius: 0 0 30px;
+    margin: 0 20px; /* Adds space between the images */
+}
+
+section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.2em;
+}
+
+section .btn-primary {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+section .btn-secondary {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6c757d;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.overview, .highlights, .technology, .financial-overview, .resources, .team, .news {
+    background-color: #f4f4f4;
+}
+
+.overview .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.overview h2{
+    grid-column: 1 / 2;
+    margin: 0;
+    font-size: 2em;
+    text-align: left;
+}
+.overview img {
+    grid-column: 1 /2;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    display: block;
+    border-radius: 15px;
+}
+.highlights .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+    align-items: start; /* Align content at the top */
+}
+
+.highlights h2 {
+    grid-column: 1 / 2; /* Place h2 in the first column */
+    margin: 0; /* Remove default margins */
+    font-size: 2em;
+    text-align: left;
+}
+
+.highlights img {
+    grid-column: 1 / 2; /* Place image in the first column below h2 */
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px; /* Add space between h2 and image */
+    display: block;
+    border-radius: 15px;
+}
+
+.highlights ul {
+    grid-column: 2 / 2; /* Place the list in the second column */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+    align-self: start; /* Align the list at the top */
+}
+@media (max-width: 768px) {
+    .highlights ul {
+        grid-column: 1 / 2; /* Shift the list to the first column on mobile */
+    }
+}
+.highlights ul li {
+    margin-bottom: 15px;
+}
+.financial-overview {
+    background-color: 161616; /* Dark background for contrast */
+    padding: 40px 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.financial-overview .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between columns */
+    align-items: center;
+    justify-items: center; /* Center items horizontally */
+}
+
+.financial-overview .overview-item {
+    background-color: #222; /* Slightly lighter background for the items */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.financial-overview .overview-item:hover {
+    transform: translateY(-10px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.financial-overview img {
+    width: 50px; /* Icon size */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.financial-overview p {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    color: #f0f0f0; /* Slightly lighter text */
+}
+
+.financial-overview h3 {
+    font-size: 2em;
+    margin: 0;
+    color: #ec410d; /* Highlight color for the financial values */
+}
+.strategic-partners .container {
+    width: 100%; /* Ensure full width */
+    margin: 0 auto;
+    display: block; /* Reset the flex display to block */
+}
+
+.strategic-partners {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.strategic-partners h2 {
+    font-size: 2em;
+    margin-bottom: 70px;
+    color: #333;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center; /* Center logos horizontally */
+    align-items: center; /* Center logos vertically */
+}
+
+.partners-grid img {
+    max-width: 150px; /* Set a maximum width for the logos */
+    max-height: 100px; /* Set a maximum height for the logos */
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.partners-grid img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.contact {
+    background-color: #f4f4f4; /* Light background for contrast */
+    padding: 40px 20px;
+    /* Subtle shadow for depth */
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333; /* Darker text for readability */
+    text-align: center; /* Center the heading */
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+}
+
+.contact label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555; /* Slightly muted label color */
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
+    transition: border-color 0.3s ease;
+}
+
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+    border-color: #ff1e00; /* Blue border on focus */
+    outline: none;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 10px; /* Ensures a good height for the textarea */
+}
+
+.contact .btn-primary {
+    padding: 10px 15px;
+    background-color: #ff2600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase; /* Makes the button text uppercase */
+}
+
+.contact .btn-primary:hover {
+    background-color: #971e00; /* Darker blue on hover */
+}
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.contact-info a {
+    color: #ce0700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 3px 0;
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer ul.social {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+footer ul.social li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer ul.social li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Increase container width on mobile for more space */
+        flex-direction: column; /* Stack items vertically on mobile */
+        justify-content: center;
+    }
+
+    header {
+        height: auto; /* Allow the header height to adjust */
+        flex-direction: column;
+        text-align: center; /* Center text in the header */
+    }
+
+    .logo img {
+        height: 100px; /* Reduce logo size on mobile */
+        margin: 0 auto; /* Center the logo */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add margin between nav items */
+    }
+
+    .hero {
+        height: auto; /* Allow the hero section to adjust height */
+        padding: 20px; /* Add padding for better spacing */
+        text-align: center; /* Ensure hero text is centered */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Reduce font size for headings */
+    }
+
+    .hero p {
+        font-size: 1em; /* Reduce font size for paragraphs */
+    }
+
+    .overview .container,
+    .highlights .container,
+    .financial-overview .container,
+    .partners-grid {
+        grid-template-columns: 1fr; /* Single column layout for easier reading */
+    }
+
+    .overview img,
+    .highlights img {
+        max-width: 100%;
+        margin: 20px 0; /* Add space above and below images */
+    }
+
+    section p {
+        font-size: 1em; /* Adjust font size for better readability */
+        max-width: 100%; /* Remove width restriction */
+        margin: 20px auto; /* Add spacing around paragraphs */
+    }
+
+    .financial-overview .overview-item {
+        margin-bottom: 20px; /* Add margin between financial overview items */
+    }
+
+    .contact form {
+        max-width: 100%; /* Ensure form takes full width on mobile */
+    }
+
+    .contact .btn-primary {
+        width: 100%; /* Make buttons full-width */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em; /* Further reduce heading size */
+    }
+
+    .hero p {
+        font-size: 0.9em; /* Further reduce paragraph size */
+    }
+
+    section h2 {
+        font-size: 1.5em; /* Reduce section heading size */
+    }
+
+    .partners-grid img {
+        max-width: 120px; /* Reduce logo size further on small screens */
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px; /* Space for logo */
+        z-index: 999;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on mobile */
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar.active {
+        left: 0; /* Slide in the navbar */
+    }
+
+    header {
+        justify-content: space-between; /* Adjust layout to accommodate the menu toggle */
+    }
+}
